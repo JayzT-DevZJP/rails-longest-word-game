@@ -1,0 +1,14 @@
+<h1>New Game</h1>
+
+<%= @letters %>
+
+<div class="answer">
+  <form action="/score" method="post" class="" data-turbo="false">
+    <div class="form-group col-md-10">
+      <input type="text" class="form-control input-lg" name="word" id="try" placeholder="Your best shot">
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg col-md-2">Submit</button>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :grid, @letters %>
+  </form>
+</div>
